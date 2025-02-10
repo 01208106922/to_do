@@ -11,7 +11,7 @@ import '../provider/my_provider.dart';
 import '../provider/user_provider.dart';
 import 'foreget_password_screen.dart';
 import 'home_screens/home_screen.dart';
-import 'register_screen.dart';
+import 'register/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "LoginScreen";

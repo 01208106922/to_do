@@ -37,11 +37,11 @@ class FirebaseManager {
     return docRef.set(task);
   }
 
-  static Future<void> addUser(UserModel user) {
-    var collection = getUsersCollection();
-    var docRef = collection.doc(user.id);
-    return docRef.set(user);
-  }
+  // static Future<void> addUser(UserModel user) {
+  //   var collection = getUsersCollection();
+  //   var docRef = collection.doc(user.id);
+  //   return docRef.set(user);
+  // }
 
   static Stream<QuerySnapshot<TaskModel>> getEvents(String categoryName) {
     var collection = getTaskCollection();
@@ -105,41 +105,41 @@ class FirebaseManager {
 
 
 
-  static Future<void> createAccount(
-      String name,
-      String emailAddress,
-      String password,
-      Function onLoading,
-      Function onSuccess,
-      Function onError) async {
-    try {
-      onLoading();
-      final credential =
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
-      );
-
-      credential.user!.sendEmailVerification();
-      UserModel userModel = UserModel(
-          id: credential.user!.uid,
-          name: name,
-          email: emailAddress,
-          createdAt: DateTime.now().millisecondsSinceEpoch);
-      addUser(userModel);
-      onSuccess();
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        onError(e.message);
-      } else if (e.code == 'email-already-in-use') {
-        onError(e.message);
-      }
-    } catch (e) {
-      onError("Something went wrong");
-
-      print(e);
-    }
-  }
+  // static Future<void> createAccount(
+  //     String name,
+  //     String emailAddress,
+  //     String password,
+  //     Function onLoading,
+  //     Function onSuccess,
+  //     Function onError) async {
+  //   try {
+  //     onLoading();
+  //     final credential =
+  //     await FirebaseAuth.instance.createUserWithEmailAndPassword(
+  //       email: emailAddress,
+  //       password: password,
+  //     );
+  //
+  //     credential.user!.sendEmailVerification();
+  //     UserModel userModel = UserModel(
+  //         id: credential.user!.uid,
+  //         name: name,
+  //         email: emailAddress,
+  //         createdAt: DateTime.now().millisecondsSinceEpoch);
+  //     addUser(userModel);
+  //     onSuccess();
+  //   } on FirebaseAuthException catch (e) {
+  //     if (e.code == 'weak-password') {
+  //       onError(e.message);
+  //     } else if (e.code == 'email-already-in-use') {
+  //       onError(e.message);
+  //     }
+  //   } catch (e) {
+  //     onError("Something went wrong");
+  //
+  //     print(e);
+  //   }
+  // }
 
   static Future<void> login(
       String email,

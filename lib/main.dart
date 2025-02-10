@@ -18,7 +18,7 @@ import 'package:route_flutter_todo/screens/home_screens/map_tab.dart';
 import 'package:route_flutter_todo/screens/home_screens/profile_tab.dart';
 import 'package:route_flutter_todo/screens/login_screen.dart';
 import 'package:route_flutter_todo/screens/onboard_screen.dart';
-import 'package:route_flutter_todo/screens/register_screen.dart';
+import 'package:route_flutter_todo/screens/register/register_screen.dart';
 import 'package:route_flutter_todo/screens/welcome_screen.dart';
 import 'package:route_flutter_todo/theme/base_theme.dart';
 import 'package:route_flutter_todo/theme/dark_theme.dart';

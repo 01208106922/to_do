@@ -38,6 +38,9 @@ class Assets {
   static const String providerAddEventProvider = 'lib/provider/add_event_provider.dart';
   static const String providerMyProvider = 'lib/provider/my_provider.dart';
   static const String providerUserProvider = 'lib/provider/user_provider.dart';
+  static const String registerRegisterConnector = 'lib/screens/register/register_connector.dart';
+  static const String registerRegisterScreen = 'lib/screens/register/register_screen.dart';
+  static const String registerRegisterViewmodel = 'lib/screens/register/register_viewmodel.dart';
   static const String screensAddEventScreen = 'lib/screens/add_event_screen.dart';
   static const String screensEventCategory = 'lib/screens/event_category.dart';
   static const String screensEventDetails = 'lib/screens/event_details.dart';
@@ -45,7 +48,6 @@ class Assets {
   static const String screensForegetPasswordScreen = 'lib/screens/foreget_password_screen.dart';
   static const String screensLoginScreen = 'lib/screens/login_screen.dart';
   static const String screensOnboardScreen = 'lib/screens/onboard_screen.dart';
-  static const String screensRegisterScreen = 'lib/screens/register_screen.dart';
   static const String screensWelcomeScreen = 'lib/screens/welcome_screen.dart';
   static const String themeBaseTheme = 'lib/theme/base_theme.dart';
   static const String themeDarkTheme = 'lib/theme/dark_theme.dart';
