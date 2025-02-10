@@ -25,11 +25,19 @@ class _RegisterScreenState extends State<RegisterScreen> implements RegisterConn
   TextEditingController rePasswordController = TextEditingController();
 
   var formKey = GlobalKey<FormState>();
+  var viewModel = RegisterViewModel();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    viewModel.registerConnector=this;
+
+  }
 
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<MyProvider>(context);
-    var viewModel = RegisterViewModel();
     return ChangeNotifierProvider(
       create: (context) => viewModel,
       child: Scaffold(
@@ -265,6 +273,7 @@ class _RegisterScreenState extends State<RegisterScreen> implements RegisterConn
   showSuccessMessage() {
 
         () {
+      Navigator.pop(context);
       Navigator.pop(context);
       Navigator.pop(context);
     };
